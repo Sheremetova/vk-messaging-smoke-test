@@ -1,0 +1,1 @@
+# vk-messaging-smoke-test
