@@ -1,0 +1,9 @@
+# IDE working files
+*.iml
+.idea/
+
+# Build directories
+target/
+
+# OS generated files
+.DS_Store*
