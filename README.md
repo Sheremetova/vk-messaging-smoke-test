@@ -11,5 +11,5 @@
     2. Install the app - you may install the app from gplay (4.6.1 version) or via terminal: cd to the root of the vk-messaging-smoke-test project directory and run 'adb install src/test/app/com.vkontakte.android.apk'.
     3. Login as USER1.
     
-    Remember, that the test uses Appium to get access to the app on a device (I prefer AVD emulator with android 8.0). So you should setup Appium on your local machine (see the instruction on http://appium.io/). To execute the whole feature you should run 'mvn test' in you terminal (e.g. in intelliJ IDEA terminal).
+    Remember, that the test uses Appium to get access to the app on a device (I prefer AVD emulator with android 8.0). So you should setup Appium on your local machine (see the instruction on http://appium.io/). To execute the whole feature you should run 'mvn test' in you terminal, e.g. in intelliJ IDEA terminal (install maven in advance - https://maven.apache.org/install.html).
     The feature file (src/test/resources/vksmoke/Smoke.feature) consists of 1 scenario checking the ability to send and receive messages.
