@@ -4,8 +4,11 @@ import cucumber.api.java.en.*;
 import io.appium.java_client.AppiumDriver;
 import vksmoke.BaseDriver;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Properties;
 
 import static org.junit.Assert.assertEquals;
 
@@ -45,9 +48,13 @@ public class SmokeSteps {
     public void user_should_receive_the_same_message() throws Exception {
         driver.removeApp("com.vkontakte.android");
         driver = new BaseDriver().restartDriver();
+        InputStream input = new FileInputStream("credentials.properties");
+        Properties prop = new Properties();
+        prop.load(input);
+
         loginScreen = new LoginScreen(driver);
         loginScreen.waitForLoginScreen();
-        loginScreen.login_with("your_login", "your_pass");
+        loginScreen.login_with(prop.getProperty("login"), prop.getProperty("password"));
 
         navigateToChat();
         the_message_should_appear_in_chat();
